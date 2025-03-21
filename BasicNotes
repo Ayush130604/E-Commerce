@@ -1,0 +1,11 @@
+types of npm packages used in this project
+
+cookie-parser
+express-session
+connect-flash npm
+joi.dev
+passport local mongoose
+
+static method = jo directly apke schema ke uper lag jate ho
+
+there is a term populate to atatch

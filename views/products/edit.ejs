@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') %>
+<!-- while using layout we gave the path according to the ejs path  -->
+
+<%- include('../partials/navbar')  %>
+<!-- while using include we gave the path according to the natural path way from where we are selecting the path  -->
+
+
+<div class="row">
+    <div class="flex flex-column">
+        <form action="/products/<%=foundProduct._id%>?_method=PATCH"  method="POST">
+            <div>
+                <label for="naam">Name of the Product</label>
+                <input type="text" name="name" id="naam" value="<%=foundProduct.name%>">
+            </div>
+            <div>
+                <label for="image">Image Url</label>
+                <input type="text" name="img" id="image" value="<%=foundProduct.img%>">
+            </div>
+            <div>
+                <label for="price">price</label>
+                <input type="text" name="price" id="price" value="<%=foundProduct.price%>">
+            </div>
+            <div>
+                <label for="desc">Description</label>
+                <input type="text" name="desc" id="desc" value="<%=foundProduct.desc%>">
+            </div>
+            <div>
+                <button type="submit">Edit it</button>
+            </div>
+        </form>
+    </div>
+</div>

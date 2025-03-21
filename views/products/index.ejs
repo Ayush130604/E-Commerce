@@ -1,0 +1,59 @@
+<% layout('layouts/boilerplate') %>
+<!-- while using layout we gave the path according to the ejs path  -->
+
+<%- include('../partials/navbar')  %>
+<!-- while using include we gave the path according to the natural path way from where we are selecting the path  -->
+ 
+<%- include('../partials/alerts')  %>
+
+<!-- <link rel="stylesheet" href="../../app.css"> -->
+
+
+<!-- <% for(let item of allproducts){ %>
+    <li>
+        <h1><%= item.name %></h1>
+        <img src="<%= item.img %>" alt="">
+        <h1><%= item.price %></h1>
+        <h1><%= item.desc %></h1>
+    </li>
+
+<% } %> -->
+
+
+
+
+
+<div class="row">
+    <% for(let item of allproducts){ %>
+        <div class="col-lg-4 mt-3">
+            <div class="card mx-auto" style="width: 18rem;">
+                    <div class="position-relative">
+                        <img src="<%= item.img %>" class="card-img-top" alt="">
+                        <span class="like-button position-absolute bottom-0 end-0 p-2" product_id="<%=item._id%>">
+                            <% if(currentuser && currentuser.wishlist.includes(item._id)) { %>
+                                <i class="fas fa-heart" style="color:red"></i>
+                            <% } else { %>
+                                <i class="far fa-heart" style="color:red"></i>
+                            <% } %>
+                        </span>
+                    </div>
+                    <i class="bi bi-heart"></i>
+                <div class="card-body">
+                    <h5 class="card-title"><%= item.name %></h5>
+                    <h5 class="card-title"><%= item.price %></h5>
+                    <p class="card-text"><%= item.desc %></p>
+                    <a href="/products/<%=item.id%>" class="btn btn-primary">View</a>
+                    <form action="/products/<%= item._id %>?_method=DELETE" method="POST">
+                        <button>delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+<script src="/js/productlike.js"></script>
+
+
+<!-- in line 33 if i wrote <%= item._id%> this is wrong because we can not use double <% %>or <% =%> in that line where one ejs tag already apply;  -->
+<!-- You're trying to use <%= ... %> inside an if condition, which is already within <% ... %> tags. -->
