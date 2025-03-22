@@ -114,6 +114,3 @@ const port = 8000;
 app.listen(port , ()=>{
     console.log(`Server is Connected at port no http://localhost:${port}`);
 })
-
-
-// some
