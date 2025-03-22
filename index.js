@@ -57,7 +57,7 @@ let connect = {
     // here i comment out the cookie part because i did not require cookie parser middle ware 
     // cookie: { secure: true }
     // if i dont comment it then my flash does not able to retrieve the data from the flash
-  }
+  } 
 app.use(session(connect));
 
 
@@ -114,3 +114,6 @@ const port = 8000;
 app.listen(port , ()=>{
     console.log(`Server is Connected at port no http://localhost:${port}`);
 })
+
+
+// some

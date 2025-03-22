@@ -9,3 +9,7 @@ passport local mongoose
 static method = jo directly apke schema ke uper lag jate ho
 
 there is a term populate to atatch
+
+
+<!-- in line 33 if i wrote <%= item._id%> this is wrong because we can not use double <% %>or <% =%> in that line where one ejs tag already apply;  -->
+<!-- You're trying to use <%= ... %> inside an if condition, which is already within <% ... %> tags. -->
